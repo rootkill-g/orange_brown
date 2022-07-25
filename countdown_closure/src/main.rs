@@ -12,11 +12,15 @@ where
 
 fn main() {
     print!("Enter a counter : ");
+
     // print macro does not flush the stdout automatically like println macro.
     // So we have to explicitly flush the stdout.
     io::stdout().flush().ok().expect("Could not flush stdout");
+
     let mut scan = String::new();
+
     io::stdin().read_line(&mut scan).unwrap();
+
     println!("Starting countdown...");
 
     let n: usize = match scan.trim().parse::<usize>() {
